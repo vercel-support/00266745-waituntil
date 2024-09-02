@@ -36,7 +36,7 @@ You should see this in runtime terminal:
  ✓ Compiled /api/test-waitUntil in 80ms (58 modules)
 entering waitUntil
  GET /api/test-waitUntil 200 in 129ms
-Sent info e-mail.
+entering waitUntil
 ```
 
 3. Build and start the production server:
@@ -67,4 +67,4 @@ You should might see this in runtime terminal:
  ✓ Ready in 163ms
 ```
 
-**There is no `GET` or `Sent info e-mail.` message in the output.**
+**There is no `GET` or `entering waitUntil` message in the output.**
