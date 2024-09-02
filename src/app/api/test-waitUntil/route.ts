@@ -4,16 +4,15 @@ import { waitUntil } from "@vercel/functions";
 export async function GET(request: Request) {
   const response = NextResponse.json({ message: "Request processed" });
 
+  // wait for 5s before sending a console.log
   waitUntil(
-    (async () => {
-      console.log("entering waitUntil");
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        console.info("Sent info e-mail.");
-      } catch (error) {
-        console.error("Failed to send info e-mail.", error);
-      }
-    })()
+    new Promise((resolve) => setTimeout(resolve, 5000))
+      .then(() => {
+        console.log("entering waitUntil");
+      })
+      .catch((error) => {
+        console.error("error in waitUntil", error);
+      })
   );
 
   return response;
